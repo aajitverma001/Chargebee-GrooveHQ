@@ -1,0 +1,66 @@
+{% if error_code == 'customer_not_found'%}
+<ul> Customer details not found</ul>
+{% else %}
+{% if customer_id %}
+<H3 class="cb-summary__title">CUSTOMER</h3>
+<ul>
+   <li><b>Name: </b>{{customer_name}}</li>
+   <li><b>Email: </b>{{customer_email}}</li>
+   <li><b>ID: </b><a target="_blank" href="{{customer_link}}">{{customer_id}}</a></li>
+   {% if customer_card_status %}
+   <li><b>Card Status: </b> {{customer_card_status}}</li>
+   {% endif%}
+   {% if subscription_id %}
+   <li><b>Subscription Id: </b> <a target="_blank" href="{{subscription_link}}">{{subscription_id}}</a></li>
+   <li><b>Status: </b> {{subscription_status}}</li>
+</ul>
+{%if recurring_items %}
+<ul>
+   <H3 class="cb-summary__title">RECURRING ITEMS</H3>
+   {% for item in recurring_items %}
+   <li>{{item}}</li>
+   {% endfor %}
+</ul>
+{% endif%}
+<ul>
+   <H3 class="cb-summary__title">TIMELINE</H3>
+   <li>Signed up on {{subscription_signed_up}}</li>
+   {% if subscription_start_date %}
+   <li>Starts on {{subscription_start_date}}</li>
+   {% endif%}
+   {% if subscription_started_at %}
+   <li>Started on {{subscription_started_at}}</li>
+   {% endif%}
+   {% if subscription_status == "In trial" %}
+   <li>Trial ends on {{subscription_trial_end}}</li>
+   {% endif%}
+   {% if subscription_activated_at %}
+   <li>Activated on {{subscription_activated_at}}</li>
+   {% endif%}
+   {% if subscription_cancelled_at %}
+   {% if subscription_status == "Non renewing" %}
+   <li>Will be cancelled on {{subscription_cancelled_at}}</li>
+   {% else %}
+   <li>Cancelled on {{subscription_cancelled_at}}</li>
+   {% endif%}
+   {% endif%}
+</ul>
+{% endif%}
+{% endif%}
+{% endif%}
+<style>
+   .cb-summary__title{
+   margin-top: 21px;
+   margin-bottom: 6px;
+   text-transform: uppercase;
+   font-weight: 600;
+   }
+   .cb-summary__title:after {
+   content: '';
+   display: block;
+   height: 2px;
+   margin: 9px 0 0;
+   width: 36px;
+   background: #BBB;
+   }
+</style>

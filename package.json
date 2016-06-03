@@ -1,0 +1,30 @@
+{
+  "name": "node-groove",
+  "version": "1.0.0",
+  "description": "Node app connector between chargebee & grooveHQ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aajitverma001"
+  },
+  "keywords": [
+    "chargebee",
+    "groovehq"
+  ],
+  "dependencies" : {
+    "chargebee" : ">2.0.4",
+    "express" : "4.x",
+    "body-parser" : "1.15.1",
+    "url" : "0.11.0",
+    "moment" : "2.13.0",
+    "dotenv" : "2.0.0",
+    "string" : "3.3.1",
+    "pluralize" : "2.0.0"
+  },
+  "author": "ajit@chargebee.com",
+  "license": "MIT"
+}
