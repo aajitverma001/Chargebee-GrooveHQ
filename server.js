@@ -59,8 +59,6 @@ function sendResponse(resp) {
 
 function createRespJson(customer, subscription, endhook) {
     var respJson = {};
-    console.log(JSON.stringify(subscription, null, 2));
-    console.log(JSON.stringify(customer, null, 2));
     respJson.customer_name = n(customer.first_name, customer.last_name);
     respJson.customer_email = customer.email;
     respJson.customer_id = customer.id;
