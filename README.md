@@ -10,5 +10,6 @@ First create .env file with the following credentials:
 </ul>
 Install dependencies with <b>npm install</b>.
 
-Start the server with node server.
+Start the node server<br>
+node server.js
 
